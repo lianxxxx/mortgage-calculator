@@ -1,1 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700&display=swap');
 @import "tailwindcss";
+
+
+:root{
+    /* Primary */
+    --lime:hsl(61, 70%, 52%);
+    --red:hsl(4, 69%, 50%);
+
+    /* Neutral */
+    --white: hsl(0, 0%, 100%);
+    --slate-light: hsl(202, 86%, 94%);
+    --slate-normal: hsl(203, 41%, 72%);
+    --slate-dark: hsl(200, 26%, 54%);
+    --slate-darker: hsl(200, 24%, 40%);
+    --slate-darkest: hsl(202, 55%, 16%);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+font-family: 'Plus Jakarta Sans' , sans-serif;
+}
+
+section{
+  margin: 20px;
+  background-color: var(--white);
+}
+
+.title-header{
+ font-weight: bold;
+ color: var(--slate-darkest);
+ font-size: 23px;
+ padding: 10px 0;
+}
+
+.clear-text{
+  color:var(--slate-darker);
+}
+
+label{
+  margin: 20px 0 10px;
+  color: var(--slate-darker);
+  font-size: 15px;
+}
+
+input {
+  height: 40px;
+  border: 1px solid var(--slate-dark);
+}
+input[type="radio"] {
+  margin: 0 15px;
+}
+
+.input-fields{
+  margin: 20px 0;
+}
+.mortgage-type{
+  margin-top: 10px;
+}
+
+button{
+  background-color: var(--lime);
+  height:40px;
+  margin-top:20px;
+}

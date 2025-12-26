@@ -2,16 +2,18 @@ import { useState } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
+import InputField from "./components/MortgageForm/InputField";
 
 function App() {
   return (
     <>
-      {" "}
-      <div className="flex items-center justify-center h-screen bg-blue-100">
-        <h1 className="text-4xl font-bold text-blue-800">
-          Tailwind is working!
-        </h1>
-      </div>
+      <main>
+        <section>
+          <h1 className="title-header">Mortgage Calculator</h1>
+          <h2 className="underline clear-text">Clear All</h2>
+          <InputField />
+        </section>
+      </main>
     </>
   );
 }
