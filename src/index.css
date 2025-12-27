@@ -67,3 +67,19 @@ button{
   height:40px;
   margin-top:20px;
 }
+.placeholder-container{
+  background-color:var(--slate-darkest);
+  padding:40px 30px;
+}
+
+.result-empty-text{
+color: var(--white);
+  font-size:20px;
+  margin:20px 0 15px 0;
+}
+.complete-form-text{
+  color: var(--slate-normal);
+  font-size:14px;
+  text-align:center;
+
+}

@@ -93,7 +93,7 @@ function InputField() {
                 value="repayment"
                 className=" border-2 w-4 rounded-full focus:outline-none mr-2"
               />
-              <span className="text-gray-700">Repayment</span>
+              <span className="text-gray-700 font-semibold">Repayment</span>
             </div>
             <div
               className="flex items-center cursor-pointer border   rounded-md p-2 mortgage-type"
@@ -107,7 +107,7 @@ function InputField() {
                 value="interest-only"
                 className="w-4 h-4 border-2  rounded-full focus:outline-none "
               />
-              <span className="text-gray-700 mortgage-type-label">
+              <span className="text-gray-700 mortgage-type-label font-semibold">
                 Interest Only
               </span>
             </div>
