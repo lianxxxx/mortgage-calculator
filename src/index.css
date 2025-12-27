@@ -67,9 +67,9 @@ button{
   height:40px;
   margin-top:20px;
 }
-.placeholder-container{
+.placeholder-container, .results-display{
   background-color:var(--slate-darkest);
-  padding:40px 30px;
+  padding:40px 25px;
 }
 
 .result-empty-text{
@@ -82,4 +82,62 @@ color: var(--white);
   font-size:14px;
   text-align:center;
 
+}
+.result-text{
+  color: var(--white);
+  font-size:24px;
+  margin-bottom:10px;
+}
+.result-description{
+  color: var(--slate-normal);
+  font-size:14px;
+  margin-bottom: 10px;
+
+}
+hr {
+  border: none;
+  height: 1px;
+  background-color: var(--slate-normal);
+  margin: 20px 0;
+}
+
+span .line-lime{
+ background-color: var(--lime);
+ height: 2px;
+}
+
+.result-box{
+background-color: #0E232F;
+padding:10px;
+}
+
+.result-box {
+  position: relative;
+  border-radius: 12px;
+  background: #1c1c1c;
+  padding: 20px;
+  margin-top:25px;
+}
+
+
+.result-box::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 100%;
+  background: var(--lime);
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+.amount-monthly-repayments{
+margin: 10px 0;
+
+}
+
+.amount-monthly-repay-term{
+margin: 10px 0;
+font-size:20px;
 }
