@@ -7,7 +7,7 @@ function InputField() {
         <label className="block" htmlFor="amount">
           Mortgage Amount
         </label>
-        <div className="relative">
+        <div className="relative ">
           <span
             className="absolute left-0 top-0 h-full w-10 flex items-center justify-center font-semibold rounded-l-md border border-r-0"
             style={{
@@ -26,56 +26,57 @@ function InputField() {
         </div>
 
         {/* Mortgage Term Input */}
-        <div>
-          <label className="block  font-medium mb-1" htmlFor="term">
-            Mortgage Term
-          </label>
-          <div className="relative">
-            <span
-              className="absolute right-0 top-0 h-full w-16 flex items-center justify-center text-sm  font-semibold rounded-r-md border border-l-0"
-              style={{
-                backgroundColor: "var(--slate-light)",
-                color: "var(--slate-darker)",
-              }}
+        <div className="term-rate">
+          <div>
+            <label className="block  font-medium mb-1" htmlFor="term">
+              Mortgage Term
+            </label>
+            <div className="relative">
+              <span
+                className="absolute right-0 top-0 h-full w-16 flex items-center justify-center text-sm  font-semibold rounded-r-md border border-l-0"
+                style={{
+                  backgroundColor: "var(--slate-light)",
+                  color: "var(--slate-darker)",
+                }}
+              >
+                years
+              </span>
+              <input
+                id="mortgage-term"
+                type="text"
+                className="w-full pl-12 pr-3 py-2 border rounded-md bg-white focus:outline-none"
+              />
+            </div>
+          </div>
+          {/* Interest Rate */}
+          <div>
+            <label
+              className="block text-gray-700 font-medium mb-1"
+              htmlFor="rate"
             >
-              years
-            </span>
-
-            <input
-              id="mortgage-term"
-              type="text"
-              className="w-full pl-12 pr-3 py-2 border rounded-md bg-white focus:outline-none"
-            />
+              Interest Rate
+            </label>
+            <div className="relative">
+              <span
+                className="absolute right-0 top-0 h-full w-10 flex items-center justify-center font-semibold rounded-r-md border border-l-0"
+                style={{
+                  backgroundColor: "var(--slate-light)",
+                  color: "var(--slate-darker)",
+                }}
+              >
+                %
+              </span>
+              <input
+                id="interest-rate"
+                type="text"
+                className="w-full pl-12 pr-3 py-2 border rounded-md bg-white focus:outline-none"
+              />
+            </div>
           </div>
         </div>
 
-        {/* Interest Rate */}
-        <div>
-          <label
-            className="block text-gray-700 font-medium mb-1"
-            htmlFor="rate"
-          >
-            Interest Rate
-          </label>
-          <div className="relative">
-            <span
-              className="absolute right-0 top-0 h-full w-10 flex items-center justify-center font-semibold rounded-r-md border border-l-0"
-              style={{
-                backgroundColor: "var(--slate-light)",
-                color: "var(--slate-darker)",
-              }}
-            >
-              %
-            </span>
 
-            <input
-              id="interest-rate"
-              type="text"
-              className="w-full pl-12 pr-3 py-2 border rounded-md bg-white focus:outline-none"
-            />
-          </div>
-        </div>
-
+{/* Mortgage Type Selection */}
         <div>
           <label className="block text-gray-700 font-medium" htmlFor="type">
             Mortgage Type
@@ -114,7 +115,7 @@ function InputField() {
           </div>
         </div>
 
-        <button className="w-full  rounded-full flex items-center justify-center gap-2 font-semibold">
+        <button className="w-full md:w-auto    rounded-full flex items-center justify-center gap-2 font-semibold">
           <img src={iconCalculator} alt="" className="w-6" />
           Calculate Repayments
         </button>

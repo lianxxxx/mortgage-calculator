@@ -26,19 +26,24 @@ font-family: 'Plus Jakarta Sans' , sans-serif;
 }
 
 section{
-  margin: 20px;
   background-color: var(--white);
 }
 
+.header-row{
+  margin:  20px 20px 0;
+  display:flex;
+  flex-direction: column;
+}
 .title-header{
  font-weight: bold;
  color: var(--slate-darkest);
  font-size: 23px;
- padding: 10px 0;
+
 }
 
 .clear-text{
   color:var(--slate-darker);
+
 }
 
 label{
@@ -56,7 +61,7 @@ input[type="radio"] {
 }
 
 .input-fields{
-  margin: 20px 0;
+  margin:  20px ;
 }
 .mortgage-type{
   margin-top: 10px;
@@ -67,15 +72,21 @@ button{
   height:40px;
   margin-top:20px;
 }
-.placeholder-container, .results-display{
+
+.result-area{
   background-color:var(--slate-darkest);
-  padding:40px 25px;
+  min-height: 420px;
+  padding: 40px 25px;
+  display: flex;
+
 }
+
 
 .result-empty-text{
 color: var(--white);
   font-size:20px;
   margin:20px 0 15px 0;
+  
 }
 .complete-form-text{
   color: var(--slate-normal);
@@ -97,28 +108,17 @@ color: var(--white);
 hr {
   border: none;
   height: 1px;
-  background-color: var(--slate-normal);
+  background-color: var(--slate-darker);
   margin: 20px 0;
-}
-
-span .line-lime{
- background-color: var(--lime);
- height: 2px;
-}
-
-.result-box{
-background-color: #0E232F;
-padding:10px;
 }
 
 .result-box {
   position: relative;
   border-radius: 12px;
-  background: #1c1c1c;
+  background-color: #0E232F;
   padding: 20px;
   margin-top:25px;
 }
-
 
 .result-box::before {
   content: "";
@@ -141,3 +141,73 @@ margin: 10px 0;
 margin: 10px 0;
 font-size:20px;
 }
+
+
+.result-area {
+  display: flex;
+}
+
+.calculator-section > div {
+  flex: 1;
+  
+}
+
+
+/* Desktop layout */
+@media (min-width: 768px) {
+  body{
+    background-color:var(--slate-light);
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    height:100vh;
+  }
+
+ section{
+  border-radius: 24px;
+  display:flex;
+  flex-direction: row;
+  align-items: stretch;
+  max-width: 900px;
+  min-width:500px;
+  margin:20px;
+  }
+
+  .header-row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    
+  }
+  
+.result-area{
+ border-radius: 0 24px 24px 72px;
+padding:30px;
+}
+.input-area{
+  padding:10px; 
+}
+.term-rate {
+  display: flex;
+  gap: 20px;
+}
+
+
+.term-rate > div {
+  flex: 1;
+}
+button{
+  padding:0 30px;
+
+}
+.result-box::before {
+  height: 4px;
+
+}
+ 
+
+}
+
+
+
