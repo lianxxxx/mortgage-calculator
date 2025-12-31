@@ -8,13 +8,7 @@ function InputField() {
           Mortgage Amount
         </label>
         <div className="relative ">
-          <span
-            className="absolute left-0 top-0 h-full w-10 flex items-center justify-center font-semibold rounded-l-md border border-r-0"
-            style={{
-              backgroundColor: "var(--slate-light)",
-              color: "var(--slate-darker)",
-            }}
-          >
+          <span className="absolute left-0 top-0 h-full w-10 flex items-center justify-center font-semibold rounded-l-md border border-r-0 amount-term-rate">
             £
           </span>
 
@@ -32,13 +26,7 @@ function InputField() {
               Mortgage Term
             </label>
             <div className="relative">
-              <span
-                className="absolute right-0 top-0 h-full w-16 flex items-center justify-center text-sm  font-semibold rounded-r-md border border-l-0"
-                style={{
-                  backgroundColor: "var(--slate-light)",
-                  color: "var(--slate-darker)",
-                }}
-              >
+              <span className="absolute right-0 top-0 h-full w-16 flex items-center justify-center text-sm  font-semibold rounded-r-md border border-l-0 amount-term-rate">
                 years
               </span>
               <input
@@ -57,13 +45,7 @@ function InputField() {
               Interest Rate
             </label>
             <div className="relative">
-              <span
-                className="absolute right-0 top-0 h-full w-10 flex items-center justify-center font-semibold rounded-r-md border border-l-0"
-                style={{
-                  backgroundColor: "var(--slate-light)",
-                  color: "var(--slate-darker)",
-                }}
-              >
+              <span className="absolute right-0 top-0 h-full w-10 flex items-center justify-center font-semibold rounded-r-md border border-l-0 amount-term-rate">
                 %
               </span>
               <input
@@ -75,37 +57,28 @@ function InputField() {
           </div>
         </div>
 
-
-{/* Mortgage Type Selection */}
+        {/* Mortgage Type Selection */}
         <div>
           <label className="block text-gray-700 font-medium" htmlFor="type">
             Mortgage Type
           </label>
           <div className="flex flex-col">
-            <div
-              className="flex items-center cursor-pointer border  rounded-md p-2"
-              style={{
-                borderColor: "var(--slate-dark)",
-              }}
-            >
+            <div className="flex items-center cursor-pointer border  rounded-md p-2 mortgage-type">
               <input
                 type="radio"
                 name="mortgageType"
                 value="repayment"
+                id="repayment"
                 className=" border-2 w-4 rounded-full focus:outline-none mr-2"
               />
               <span className="text-gray-700 font-semibold">Repayment</span>
             </div>
-            <div
-              className="flex items-center cursor-pointer border   rounded-md p-2 mortgage-type"
-              style={{
-                borderColor: "var(--slate-dark)",
-              }}
-            >
+            <div className="flex items-center cursor-pointer border   rounded-md p-2 mortgage-type">
               <input
                 type="radio"
                 name="mortgageType"
                 value="interest-only"
+                id="interest-only"
                 className="w-4 h-4 border-2  rounded-full focus:outline-none "
               />
               <span className="text-gray-700 mortgage-type-label font-semibold">

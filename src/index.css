@@ -5,6 +5,7 @@
 :root{
     /* Primary */
     --lime:hsl(61, 70%, 52%);
+    --lime-light: #DFF27A;  
     --red:hsl(4, 69%, 50%);
 
     /* Neutral */
@@ -64,9 +65,15 @@ input[type="radio"] {
   margin:  20px ;
 }
 .mortgage-type{
-  margin-top: 10px;
+margin-top: 10px;
+border-color:var(--slate-dark);
 }
 
+.amount-term-rate{
+background-color: var(--slate-light);
+color: var(--slate-darker);
+              
+}
 button{
   background-color: var(--lime);
   height:40px;
@@ -152,6 +159,24 @@ font-size:20px;
   
 }
 
+.clear-text:hover {
+cursor: pointer;
+color:var(--slate-darkest);
+}
+#mortgage-amount:hover, #mortgage-term:hover, #interest-rate:hover{
+cursor: pointer;
+border-color:var(--slate-darkest);
+}
+
+  .mortgage-type:hover {
+cursor: pointer;
+border-color: var(--lime);
+  }
+
+button:hover{
+  cursor: pointer;
+  background-color: var(--lime-light);
+}
 
 /* Desktop layout */
 @media (min-width: 768px) {
@@ -199,6 +224,7 @@ padding:30px;
 }
 button{
   padding:0 30px;
+  margin-top:30px;
 
 }
 .result-box::before {
