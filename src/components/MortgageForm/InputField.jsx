@@ -25,7 +25,7 @@ function InputField() {
             <label className="block  font-medium mb-1" htmlFor="term">
               Mortgage Term
             </label>
-            <div className="relative">
+            <div className="relative input-box">
               <span className="absolute right-0 top-0 h-full w-16 flex items-center justify-center text-sm  font-semibold rounded-r-md border border-l-0 amount-term-rate">
                 years
               </span>
@@ -55,7 +55,7 @@ function InputField() {
               />
             </div>
           </div>
-        </div>
+        </div>    
 
         {/* Mortgage Type Selection */}
         <div>
@@ -80,7 +80,7 @@ function InputField() {
                 value="interest-only"
                 id="interest-only"
                 className="w-4 h-4 border-2  rounded-full focus:outline-none "
-              />
+              /> 
               <span className="text-gray-700 mortgage-type-label font-semibold">
                 Interest Only
               </span>

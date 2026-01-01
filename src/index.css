@@ -56,9 +56,45 @@ label{
 input {
   height: 40px;
   border: 1px solid var(--slate-dark);
+  color: var(--slate-darkest);
+  font-weight: 600;
+
 }
+
+
+/* Custom radio button styling */
 input[type="radio"] {
-  margin: 0 15px;
+  appearance: none;
+  -webkit-appearance: none;
+  width: 15px;
+  height: 15px;
+  border: 2px solid hsl(61, 70%, 52%);
+  border-radius: 50%;
+  outline: none;
+  cursor: pointer;
+  position: relative;
+  background-color: white;
+  margin:12px;
+}
+
+/* Checked state - inner dot */
+input[type="radio"]:checked::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background-color: var(--lime);
+}
+.mortgage-type:active{
+background-color:  hsl(340, 77%, 37%);
+}
+/* Hover effect */
+input[type="radio"]:hover {
+  border-color: hsl(61, 70%, 62%);
 }
 
 .input-fields{
@@ -68,11 +104,21 @@ input[type="radio"] {
 margin-top: 10px;
 border-color:var(--slate-dark);
 }
-
+.mortgage-type:active{
+background-color: hsl(61, 70%, 96%);
+}
 .amount-term-rate{
 background-color: var(--slate-light);
 color: var(--slate-darker);
               
+}
+
+#mortgage-amount{
+  padding-left: 55px;  
+}
+
+#mortgage-term, #interest-rate{
+  padding-left: 15px;  
 }
 button{
   background-color: var(--lime);
@@ -87,7 +133,6 @@ button{
   display: flex;
 
 }
-
 
 .result-empty-text{
 color: var(--white);
@@ -168,15 +213,19 @@ cursor: pointer;
 border-color:var(--slate-darkest);
 }
 
-  .mortgage-type:hover {
+
+.mortgage-type:hover {
 cursor: pointer;
 border-color: var(--lime);
   }
+
 
 button:hover{
   cursor: pointer;
   background-color: var(--lime-light);
 }
+
+
 
 /* Desktop layout */
 @media (min-width: 768px) {
@@ -216,6 +265,7 @@ padding:30px;
 .term-rate {
   display: flex;
   gap: 20px;
+
 }
 
 
