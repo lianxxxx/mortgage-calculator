@@ -62,23 +62,26 @@ input {
 }
 
 
-/* Custom radio button styling */
-input[type="radio"] {
+/* Repayment radio button */
+#repayment {
   appearance: none;
   -webkit-appearance: none;
   width: 15px;
   height: 15px;
-  border: 2px solid hsl(61, 70%, 52%);
   border-radius: 50%;
   outline: none;
   cursor: pointer;
   position: relative;
   background-color: white;
-  margin:12px;
+  margin: 12px;
+  box-sizing: border-box;
 }
 
-/* Checked state - inner dot */
-input[type="radio"]:checked::before {
+#repayment:checked {
+  border-color: var(--lime);
+}
+
+#repayment:checked::before {
   content: '';
   position: absolute;
   top: 50%;
@@ -88,14 +91,49 @@ input[type="radio"]:checked::before {
   height: 9px;
   border-radius: 50%;
   background-color: var(--lime);
+  box-sizing: border-box;
 }
-.mortgage-type:active{
-background-color:  hsl(340, 77%, 37%);
+
+
+/* 
+  Note: Radio buttons are styled separately by ID instead of using a general 
+  input[type="radio"] selector because Tailwind classes were causing 
+  inconsistent sizing and styling conflicts. Separate styling ensures 
+  both radio buttons have identical appearance and proper alignment.
+*/
+
+/* Interest Only radio button */
+#interest-only {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  outline: none;
+  cursor: pointer;
+  position: relative;
+  background-color: white;
+  margin: 12px;
+  box-sizing: border-box;
 }
-/* Hover effect */
-input[type="radio"]:hover {
-  border-color: hsl(61, 70%, 62%);
+
+#interest-only:checked {
+  border-color: var(--lime);
 }
+
+#interest-only:checked::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -45%);
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background-color: var(--lime);
+  box-sizing: border-box;
+}
+
 
 .input-fields{
   margin:  20px ;
@@ -104,13 +142,27 @@ input[type="radio"]:hover {
 margin-top: 10px;
 border-color:var(--slate-dark);
 }
-.mortgage-type:active{
-background-color: hsl(61, 70%, 96%);
+
+.mortgage-type:has(input[type="radio"]:checked) {
+  background-color: hsl(61, 70%, 92%);
+  border-color: var(--lime);
 }
-.amount-term-rate{
-background-color: var(--slate-light);
-color: var(--slate-darker);
-              
+.amount-term-rate {
+  color: var(--slate-darker);
+ background-color: var(--slate-light);
+  transition: all 0.3s ease;
+}
+
+
+.amount-term-rate.active {
+  background-color: var(--lime);
+  color: var(--darkest);
+  border-color: var(--lime);
+}
+
+#mortgage-amount:focus, #mortgage-term:focus, #interest-rate:focus {
+  border-color: var(--lime) !important;
+  outline: none;
 }
 
 #mortgage-amount{
