@@ -2,52 +2,54 @@
 @import "tailwindcss";
 
 
-:root{
-    /* Primary */
-    --lime:hsl(61, 70%, 52%);
-    --lime-light: #DFF27A;  
-    --red:hsl(4, 69%, 50%);
+:root {
+  /* Primary */
+  --lime: hsl(61, 70%, 52%);
+  --lime-light: #DFF27A;
+  --red: hsl(4, 69%, 50%);
 
-    /* Neutral */
-    --white: hsl(0, 0%, 100%);
-    --slate-light: hsl(202, 86%, 94%);
-    --slate-normal: hsl(203, 41%, 72%);
-    --slate-dark: hsl(200, 26%, 54%);
-    --slate-darker: hsl(200, 24%, 40%);
-    --slate-darkest: hsl(202, 55%, 16%);
+  /* Neutral */
+  --white: hsl(0, 0%, 100%);
+  --slate-light: hsl(202, 86%, 94%);
+  --slate-normal: hsl(203, 41%, 72%);
+  --slate-dark: hsl(200, 26%, 54%);
+  --slate-darker: hsl(200, 24%, 40%);
+  --slate-darkest: hsl(202, 55%, 16%);
 }
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-body{
-font-family: 'Plus Jakarta Sans' , sans-serif;
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
-section{
+section {
   background-color: var(--white);
 }
 
-.header-row{
-  margin:  20px 20px 0;
-  display:flex;
+.header-row {
+  margin: 20px 20px 0;
+  display: flex;
   flex-direction: column;
 }
-.title-header{
- font-weight: bold;
- color: var(--slate-darkest);
- font-size: 23px;
+
+.title-header {
+  font-weight: bold;
+  color: var(--slate-darkest);
+  font-size: 23px;
 
 }
 
-.clear-text{
-  color:var(--slate-darker);
+.clear-text {
+  color: var(--slate-darker);
 
 }
 
-label{
+label {
   margin: 20px 0 10px;
   color: var(--slate-darker);
   font-size: 15px;
@@ -61,48 +63,7 @@ input {
 
 }
 
-
-/* Repayment radio button */
-#repayment {
-  appearance: none;
-  -webkit-appearance: none;
-  width: 15px;
-  height: 15px;
-  border-radius: 50%;
-  outline: none;
-  cursor: pointer;
-  position: relative;
-  background-color: white;
-  margin: 12px;
-  box-sizing: border-box;
-}
-
-#repayment:checked {
-  border-color: var(--lime);
-}
-
-#repayment:checked::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 9px;
-  height: 9px;
-  border-radius: 50%;
-  background-color: var(--lime);
-  box-sizing: border-box;
-}
-
-
-/* 
-  Note: Radio buttons are styled separately by ID instead of using a general 
-  input[type="radio"] selector because Tailwind classes were causing 
-  inconsistent sizing and styling conflicts. Separate styling ensures 
-  both radio buttons have identical appearance and proper alignment.
-*/
-
-/* Interest Only radio button */
+#repayment,
 #interest-only {
   appearance: none;
   -webkit-appearance: none;
@@ -117,16 +78,18 @@ input {
   box-sizing: border-box;
 }
 
+#repayment:checked,
 #interest-only:checked {
   border-color: var(--lime);
 }
 
+#repayment:checked::before,
 #interest-only:checked::before {
   content: '';
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -45%);
+  transform: translate(-50%, -50%);
   width: 9px;
   height: 9px;
   border-radius: 50%;
@@ -134,22 +97,23 @@ input {
   box-sizing: border-box;
 }
 
-
-.input-fields{
-  margin:  20px ;
+.input-fields {
+  margin: 20px;
 }
-.mortgage-type{
-margin-top: 10px;
-border-color:var(--slate-dark);
+
+.mortgage-type {
+  margin-top: 10px;
+  border-color: var(--slate-dark);
 }
 
 .mortgage-type:has(input[type="radio"]:checked) {
   background-color: hsl(61, 70%, 92%);
   border-color: var(--lime);
 }
+
 .amount-term-rate {
   color: var(--slate-darker);
- background-color: var(--slate-light);
+  background-color: var(--slate-light);
   transition: all 0.3s ease;
 }
 
@@ -160,55 +124,82 @@ border-color:var(--slate-dark);
   border-color: var(--lime);
 }
 
-#mortgage-amount:focus, #mortgage-term:focus, #interest-rate:focus {
+
+#mortgage-amount:focus,
+#mortgage-term:focus,
+#interest-rate:focus {
   border-color: var(--lime) !important;
   outline: none;
 }
 
-#mortgage-amount{
-  padding-left: 55px;  
+/* ERROR MESSAGE STYLE FOR ERROR STATES */
+.amount-term-rate.bg-red-500 {
+  background-color: #ef4444 !important;
+  color: white !important;
+  border-color: #ef4444 !important;
 }
 
-#mortgage-term, #interest-rate{
-  padding-left: 15px;  
+#mortgage-amount.border-red-500:focus,
+#mortgage-term.border-red-500:focus,
+#interest-rate.border-red-500:focus {
+  border-color: #ef4444 !important;
+  outline: none;
 }
-button{
+
+.border-red-500 {
+  border-color: #ef4444 !important;
+}
+
+#mortgage-amount {
+  padding-left: 55px;
+}
+
+#mortgage-term,
+#interest-rate {
+  padding-left: 15px;
+}
+
+button {
   background-color: var(--lime);
-  height:40px;
-  margin-top:20px;
+  height: 40px;
+  margin-top: 20px;
 }
 
-.result-area{
-  background-color:var(--slate-darkest);
+.result-area {
+  background-color: var(--slate-darkest);
   min-height: 420px;
   padding: 40px 25px;
   display: flex;
 
 }
 
-.result-empty-text{
-color: var(--white);
-  font-size:20px;
-  margin:20px 0 15px 0;
-  
-}
-.complete-form-text{
-  color: var(--slate-normal);
-  font-size:14px;
-  text-align:center;
+.result-empty-text {
+  color: var(--white);
+  font-size: 20px;
+  margin: 20px 0 15px 0;
 
 }
-.result-text{
-  color: var(--white);
-  font-size:24px;
-  margin-bottom:10px;
-}
-.result-description{
+
+.complete-form-text {
   color: var(--slate-normal);
-  font-size:14px;
+  font-size: 14px;
+  text-align: center;
+
+}
+
+.result-text {
+  color: var(--white);
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.result-description {
+  color: var(--slate-normal);
+  font-size: 14px;
   margin-bottom: 10px;
 
 }
+
 hr {
   border: none;
   height: 1px;
@@ -221,7 +212,7 @@ hr {
   border-radius: 12px;
   background-color: #0E232F;
   padding: 20px;
-  margin-top:25px;
+  margin-top: 25px;
 }
 
 .result-box::before {
@@ -234,16 +225,17 @@ hr {
   background: var(--lime);
   border-top-left-radius: 12px;
   border-top-right-radius: 12px;
-}
-
-.amount-monthly-repayments{
-margin: 10px 0;
 
 }
 
-.amount-monthly-repay-term{
-margin: 10px 0;
-font-size:20px;
+.amount-monthly-repayments {
+  margin: 10px 0;
+
+}
+
+.amount-monthly-repay-term {
+  margin: 10px 0;
+  font-size: 20px;
 }
 
 
@@ -251,91 +243,100 @@ font-size:20px;
   display: flex;
 }
 
-.calculator-section > div {
+.calculator-section>div {
   flex: 1;
-  
+
 }
 
 .clear-text:hover {
-cursor: pointer;
-color:var(--slate-darkest);
+  cursor: pointer;
+  color: var(--slate-darkest);
 }
-#mortgage-amount:hover, #mortgage-term:hover, #interest-rate:hover{
-cursor: pointer;
-border-color:var(--slate-darkest);
+
+#mortgage-amount:hover,
+#mortgage-term:hover,
+#interest-rate:hover {
+  cursor: pointer;
+  border-color: var(--slate-darkest);
 }
 
 
 .mortgage-type:hover {
-cursor: pointer;
-border-color: var(--lime);
-  }
+  cursor: pointer;
+  border-color: var(--lime);
+}
 
 
-button:hover{
+button:hover {
   cursor: pointer;
   background-color: var(--lime-light);
 }
 
 
+.error-message {
+  margin-top: 8px;
+}
 
 /* Desktop layout */
 @media (min-width: 768px) {
-  body{
-    background-color:var(--slate-light);
-    display:flex;
+  body {
+    background-color: var(--slate-light);
+    display: flex;
     justify-content: center;
     align-items: center;
-    height:100vh;
+    height: 100vh;
   }
 
- section{
-  border-radius: 24px;
-  display:flex;
-  flex-direction: row;
-  align-items: stretch;
-  max-width: 900px;
-  min-width:500px;
-  margin:20px;
+  section {
+    border-radius: 24px;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    max-width: 900px;
+    min-width: 500px;
+    margin: 20px;
   }
 
-  .header-row{
+  .header-row {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    
+
   }
-  
-.result-area{
- border-radius: 0 24px 24px 72px;
-padding:30px;
+
+  .result-area {
+    border-radius: 0 24px 24px 72px;
+    padding: 30px;
+  }
+
+  .input-area {
+    padding: 10px;
+  }
+
+  .term-rate {
+    display: flex;
+    gap: 20px;
+
+  }
+
+
+  .term-rate>div {
+    flex: 1;
+  }
+
+  button {
+    padding: 0 30px;
+    margin-top: 30px;
+
+  }
+
+  .result-box::before {
+    height: 4px;
+
+  }
+
+  #interest-only:checked::before {
+    transform: translate(-50%, -45%);
+  }
 }
-.input-area{
-  padding:10px; 
-}
-.term-rate {
-  display: flex;
-  gap: 20px;
-
-}
-
-
-.term-rate > div {
-  flex: 1;
-}
-button{
-  padding:0 30px;
-  margin-top:30px;
-
-}
-.result-box::before {
-  height: 4px;
-
-}
- 
-
-}
-
-
-
